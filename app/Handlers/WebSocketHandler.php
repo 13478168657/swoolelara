@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Services;
+namespace App\Handlers;
 
 use Hhxsv5\LaravelS\Swoole\WebSocketHandlerInterface;
 use Illuminate\Support\Facades\Log;
@@ -8,7 +7,7 @@ use Swoole\Http\Request;
 use Swoole\WebSocket\Frame;
 use Swoole\WebSocket\Server;
 
-class WebSocketService implements WebSocketHandlerInterface
+class WebSocketHandler implements WebSocketHandlerInterface
 {
     public function __construct()
     {

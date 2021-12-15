@@ -21,7 +21,9 @@
     "sass": "^1.15.2",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.17",
-    "vue-template-compiler": "^2.6.14"
+    "vue-router": "^3.5.3",
+    "vue-template-compiler": "^2.6.14",
+    "vuex": "^3.6.2"
   },
   "dependencies": {
     "vue-baberrage": "^3.2.4"
