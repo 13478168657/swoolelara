@@ -28,6 +28,6 @@ Route::get('/task/test', function () {
 });
 
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

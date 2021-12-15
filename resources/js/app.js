@@ -27,7 +27,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.component('tasks-component', require('./components/TasksComponent.vue').default);
+//Vue.component('tasks-component', require('./components/TasksComponent.vue').default);
 Vue.component('danmu-component', require('./components/DanmuComponent.vue').default);
 
 const app = new Vue({
