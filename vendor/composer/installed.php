@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '71e7a3301376fe61f9c13992d958341aa2025ba9',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -93,6 +93,12 @@
             'aliases' => array(),
             'reference' => 'cb17b6477dfff935958ba01325f2e8a2bfa6dab3',
             'dev_requirement' => false,
+        ),
+        'facebook/webdriver' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'fideloper/proxy' => array(
             'pretty_version' => '4.4.1',
@@ -367,6 +373,15 @@
             'reference' => '429be50660ed8a196e0798e5939760f168ec8ce9',
             'dev_requirement' => false,
         ),
+        'laravel/dusk' => array(
+            'pretty_version' => 'v5.11.0',
+            'version' => '5.11.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/dusk',
+            'aliases' => array(),
+            'reference' => 'e07cc46a1e39767739e8197189780b4c2639806d',
+            'dev_requirement' => false,
+        ),
         'laravel/framework' => array(
             'pretty_version' => 'v5.7.29',
             'version' => '5.7.29.0',
@@ -377,12 +392,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '71e7a3301376fe61f9c13992d958341aa2025ba9',
             'dev_requirement' => false,
         ),
         'laravel/nexmo-notification-channel' => array(
@@ -587,6 +602,15 @@
             'install_path' => __DIR__ . '/../php-http/promise',
             'aliases' => array(),
             'reference' => '4c4c1f9b7289a2ec57cde7f1e9762a5789506f88',
+            'dev_requirement' => false,
+        ),
+        'php-webdriver/webdriver' => array(
+            'pretty_version' => '1.12.0',
+            'version' => '1.12.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-webdriver/webdriver',
+            'aliases' => array(),
+            'reference' => '99d4856ed7dffcdf6a52eccd6551e83d8d557ceb',
             'dev_requirement' => false,
         ),
         'phpdocumentor/reflection-common' => array(
