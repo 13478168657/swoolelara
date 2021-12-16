@@ -29,7 +29,10 @@ return [
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],
-
+    'turingapi' => [
+        'url' => 'http://www.tuling123.com/openapi/api',
+        'key' => env('ROBOT_KEY')
+    ],
     'stripe' => [
         'model' => App\User::class,
         'key' => env('STRIPE_KEY'),

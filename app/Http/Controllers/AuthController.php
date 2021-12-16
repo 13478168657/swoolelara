@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-{
+class AuthController extends Controller{
     public function __construct()
     {
         $this->middleware('auth:api')->only('logout');

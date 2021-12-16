@@ -133,7 +133,9 @@ return [
     |
     */
 
-    'event_handlers' => [],
+    'event_handlers' => [
+            'WorkerStart' => \App\Events\WorkerStartEvent::class,
+    ],
 
     'events'                   => [
         \App\Events\MessageReceived::class => [
@@ -158,6 +160,33 @@ return [
     'websocket' => [
         'enable' => true,
         'handler' => \App\Services\WebSocket\WebeSocketHandler::class,
+        'parser' => \App\Services\WebSocket\SocketIO\SocketIOParser::class,
+        'drivers' => [
+           'default' => 'table',
+           'table' => \App\Services\Websocket\Rooms\TableRoom::class,
+           'redis' => \App\Services\Websocket\Rooms\RedisRoom::class,
+           'settings' => [
+               'table' => [
+                   'room_rows' => 4096,
+                   'room_size' => 2048,
+                   'client_rows' => 8192,
+                   'client_size' => 2048,
+               ],
+               'redis' => [
+                   'server' => [
+                       'host' => env('REDIS_HOST', '127.0.0.1'),
+                       'password' => env('REDIS_PASSWORD', null),
+                       'port' => env('REDIS_PORT', 6379),
+                       'database' => 0,
+                       'persistent' => true,
+                   ],
+                   'options' => [
+                       //
+                   ],
+                   'prefix' => 'swoole:',
+               ],
+           ],
+        ]
     ],
 
     /*
