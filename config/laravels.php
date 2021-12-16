@@ -135,6 +135,11 @@ return [
 
     'event_handlers' => [],
 
+    'events'                   => [
+        \App\Events\MessageReceived::class => [
+            \App\Listeners\MessageListener::class,
+        ]
+    ],
     /*
     |--------------------------------------------------------------------------
     | WebSockets
@@ -152,7 +157,7 @@ return [
 //    ],
     'websocket' => [
         'enable' => true,
-        'handler' => \App\Services\WebSocketService::class,
+        'handler' => \App\Services\WebSocket\WebeSocketHandler::class,
     ],
 
     /*
@@ -264,7 +269,9 @@ return [
     |
     */
 
-    'cleaners' => [],
+    'cleaners' => [
+        \Hhxsv5\LaravelS\Illuminate\Cleaners\AuthCleaner::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -321,5 +328,7 @@ return [
         'enable_coroutine'   => true,
         'upload_tmp_dir'     => @is_writable('/dev/shm/') ? '/dev/shm' : '/tmp',
         'http_compression'   => false,
+        'heartbeat_idle_time' => 60,
+        'heartbeat_check_interval' => 25,
     ],
 ];
