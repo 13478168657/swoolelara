@@ -17,7 +17,6 @@ class Openssl{
     public function get_methods(){
 
         $methods =  openssl_get_cipher_methods();
-        print_r($methods);
         return $methods;
     }
 

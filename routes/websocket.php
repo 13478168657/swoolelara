@@ -1,7 +1,7 @@
 <?php
-use App\Count;
+use App\Models\Count;
 use App\User;
-use App\Message;
+use App\Models\Message;
 use Carbon\Carbon;
 use Swoole\Http\Request;
 use App\Services\WebSocket\WebSocket;

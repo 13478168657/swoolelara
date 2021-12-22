@@ -104,7 +104,7 @@ export default {
   right: 0;
   top: 0;
   bottom: 0;
-  background-image: url('//webchat.test/login_bg.jpg');
+  background-image: url('//s3.qiufengh.com/webchat/bg.jpg');
   background-size: 100% 100%;
   background-position: center center;
 

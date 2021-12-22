@@ -15,7 +15,8 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('login');
+            // return route('login');
+            throw new AuthorizationException("登录后才能建立 Websocket 连接");
         }
     }
 }

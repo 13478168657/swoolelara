@@ -159,7 +159,7 @@ return [
 //    ],
     'websocket' => [
         'enable' => true,
-        'handler' => \App\Services\WebSocket\WebeSocketHandler::class,
+        'handler' => \App\Services\WebSocket\WebSocketHandler::class,
         'parser' => \App\Services\WebSocket\SocketIO\SocketIOParser::class,
         'drivers' => [
            'default' => 'table',

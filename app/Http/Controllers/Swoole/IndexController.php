@@ -1,9 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Index;
-
-
+namespace App\Http\Controllers\Swoole;
 
 use App\Common\Crypt;
 use App\Lib\Encrypt\Hash;
@@ -22,9 +20,15 @@ class IndexController extends Controller{
     }
 
 
-    public static function index(Request $request)
+    public static function index($request)
     {
         echo "<pre>";
+        echo "=====\n";
+        print_r($request->get['a']);
+        print_r($request->get['b']);
+        echo "====\n";
+        echo "\n";
+        echo posix_getpid()."\n";
         $hash = new Openssl();
         $hash->aes_encrypt("message to be encrypted");
         $hash->get_methods();
@@ -55,7 +59,7 @@ class IndexController extends Controller{
 //        var_dump($pi_key);
         $result = openssl_private_decrypt($crypttext, $decrypt, $pi_key, OPENSSL_PKCS1_PADDING);
         print_r($decrypt);die;
-	}
+    }
 
     /**
      * rsa 私钥加密公钥解密
@@ -81,10 +85,10 @@ class IndexController extends Controller{
         print_r($newsource);die;
     }
 
-	public function add(){
+    public function add(){
 
-		print_r(88232);
-	}
+        print_r(88232);
+    }
 
 
     /**

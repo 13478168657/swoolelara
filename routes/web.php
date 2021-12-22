@@ -28,6 +28,9 @@ Route::get('/task/test', function () {
     var_dump($success);
 });
 
-Auth::routes();
+Route::get('/socket.io', 'SocketIOController@upgrade');
+Route::post('/socket.io', 'SocketIOController@ok');
+
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

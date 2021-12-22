@@ -348,4 +348,4 @@
   };
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" src="./Chat.styl" scoped></style>
+<style lang="stylus" rel="stylesheet/stylus" src="./Chat.style" scoped></style>
