@@ -8,6 +8,7 @@ use Illuminate\Routing\Route;
 class HttpServer {
 
 
+    protected $server;
     public function __construct()
     {
         $this->init();
@@ -15,16 +16,17 @@ class HttpServer {
 
     public function init(){
 
-
-        $http = new \Swoole\Http\Server('172.17.0.4', 9501);
+        $addr = env('LARAVELS_LISTEN_IP');
+        $http = new \Swoole\Http\Server($addr, 9501);
 
         $http->set([
-            'worker_num'      => 8,
-            'reactor_num' => 5
+            'worker_num'      => 6,
+            'reactor_num' => 5,
+
 //    'task_object' => true, // v4.6.0版本增加的别名
         ]);
-        $http->on('start', function ($server) {
-            echo "Swoole http server is started at http://172.17.0.4:9501\n";
+        $http->on('start', function ($server) use ($addr) {
+            echo "Swoole http server is started at $addr:9501\n";
         });
 
         $http->on('request', function ($request, $response) {
@@ -36,9 +38,14 @@ class HttpServer {
 //            $response->header('Content-Type', 'text/plain');
             $response->end($result);
         });
-
+        $this->server = $http;
         $http->start();
 
+    }
+
+    public function reload(){
+
+        $this->server->reload();
     }
 }
 

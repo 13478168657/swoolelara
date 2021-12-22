@@ -45,8 +45,9 @@ class Swoole extends Command
             case 'start':
                 $server = new HttpServer();
                 break;
-            case 'stop':
+            case 'reload':
                 $server = new HttpServer();
+                $server->reload();
                 break;
             default:
                 break;

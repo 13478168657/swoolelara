@@ -24,6 +24,7 @@ class IndexController extends Controller{
     {
         echo "<pre>";
         echo "=====\n";
+        print_r(env(''));
         print_r($request->get['a']);
         print_r($request->get['b']);
         echo "====\n";
