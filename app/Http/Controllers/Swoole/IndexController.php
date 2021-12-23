@@ -22,18 +22,16 @@ class IndexController extends Controller{
 
     public static function index($request)
     {
-        echo "<pre>";
         echo "=====\n";
-        print_r(env(''));
-        print_r($request->get['a']);
-        print_r($request->get['b']);
-        echo "====\n";
-        echo "\n";
         echo posix_getpid()."\n";
-        $hash = new Openssl();
-        $hash->aes_encrypt("message to be encrypted");
-        $hash->get_methods();
-        logger()->info("afaf");
+//        $hash = new Openssl();
+//        $hash->aes_encrypt("message to be encrypted");
+//        $hash->get_methods();
+        echo "1\n";
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1', 6379);//此处产生协程调度，cpu切到下一个协程(下一个请求)，不会阻塞进程
+        $redis->get('key');//此处产生协程调度，cpu切到下一个协程(下一个请求)，不会阻塞进程
+        echo posix_getpid()."--3\n";
         return view('index.index');
     }
     /**

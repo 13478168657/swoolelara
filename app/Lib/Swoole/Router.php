@@ -16,7 +16,7 @@ class Router{
     public function dispatch(){
         $server = $this->request->server;
         $request_uri = trim($server['request_uri'],'/');
-        print_r($request_uri);
+//        print_r($request_uri);
         if($request_uri == 'index'){
             $this->controller = 'Swoole\IndexController';
             $this->action = 'index';

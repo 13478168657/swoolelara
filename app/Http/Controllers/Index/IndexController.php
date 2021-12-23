@@ -12,7 +12,8 @@ use App\Lib\Encrypt\PasswordCrypt;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-
+use App\Services\Es\House;
+use App\Services\Es\User;
 class IndexController extends Controller{
 
     public function __construct()
@@ -25,10 +26,10 @@ class IndexController extends Controller{
     public static function index(Request $request)
     {
         echo "<pre>";
-        $hash = new Openssl();
-        $hash->aes_encrypt("message to be encrypted");
-        $hash->get_methods();
-        logger()->info("afaf");
+        $house = new House('house','house');
+//        $result = $user->match(['name'=>'ykk'])->should(['id'=>1])->from(1)->size(10)->source(['id', 'name'])->get();
+//        $res = $house->create_index();
+//        $house->create_doc();
         return view('index.index');
     }
     /**

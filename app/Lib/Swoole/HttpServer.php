@@ -17,11 +17,13 @@ class HttpServer {
     public function init(){
 
         $addr = env('LARAVELS_LISTEN_IP');
+        \Swoole\Runtime::enableCoroutine($flags = SWOOLE_HOOK_ALL);
         $http = new \Swoole\Http\Server($addr, 9501);
 
         $http->set([
-            'worker_num'      => 6,
-            'reactor_num' => 5,
+            'worker_num'      => 2,
+//            'enable_coroutine' => false
+//            'reactor_num' => 5,
 
 //    'task_object' => true, // v4.6.0版本增加的别名
         ]);

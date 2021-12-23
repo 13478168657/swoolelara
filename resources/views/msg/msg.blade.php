@@ -8,11 +8,42 @@
 <div><span>欢迎，</span><span id="name"></span></div>
 <textarea id="msg"></textarea>
 <button id="send">发送</button>
-<div style="width:200px;height:500px;margin-left:300px;border-color:red;">
-    <div class="left"></div>
-    <div class="right"></div>
+<div class="frame">
+    <div class="clear">
+        <div class="left">
+            <span></span>
+        </div>
+        <div class="right">
+            <span></span>
+        </div>
+
+    </div>
 </div>
 </body>
+<style>
+    .frame{
+        float:right;
+        width:200px;
+        height:500px;
+        margin-right:300px;
+        border:1px solid red;
+    }
+    .clear{
+        clear: both;
+    }
+    .left{
+        border:1px solid red;
+        height:15px;
+        width:100%;
+    }
+    .right{
+        border:1px solid red;
+        height:15px;
+        width:80px;
+        margin-right:10px;
+    }
+
+</style>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
 <script>
     var nameArr = ["小王","小杨","小鸭","小鸡","李四"];
@@ -37,10 +68,10 @@
         console.log('Error occured: ' + evt.data);
     };
 
-
     $("#send").click(function(){
         var msg = $("#msg").val();
-        websocket.send(msg);
+        var info = {name:name, msg:msg};
+        websocket.send(JSON.stringify(info));
     });
 </script>
 </html>
