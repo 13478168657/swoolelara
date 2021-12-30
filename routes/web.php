@@ -17,6 +17,13 @@ Route::get('/', function () {
 });
 
 Route::get('/index', 'Index\IndexController@index');
+Route::get('apply/index', 'Apply\ApplyController@index');
+Route::get('apply/memento', 'Apply\ApplyController@memento');
+Route::get('apply/zuhe', 'Apply\ApplyController@zuhe');
+Route::get('apply/iterator', 'Apply\ApplyController@iterator');
+Route::get('apply/danli', 'Apply\ApplyController@danli');
+Route::get('apply/index5', 'Apply\ApplyController@index');
+Route::get('apply/index6', 'Apply\ApplyController@index');
 Route::get('/add', 'Index\IndexController@add');
 Route::get('/danmu', function() {
     return view('danmu');

@@ -17,7 +17,7 @@ class House extends Base{
 
     public function getUser()
     {
-
+        
     }
 
     public function create_index()
